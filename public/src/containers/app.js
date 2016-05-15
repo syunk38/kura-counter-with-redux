@@ -6,19 +6,18 @@ import React, { Component, PropTypes } from 'react';
 
 class App extends Component {
   render() {
-    const {count, incrementCount, decrementCount, dispatch} = this.props;
-    console.log(count);
+    const {count, incrementCount, decrementCount} = this.props;
     return <Counter
       count={count}
-      onIncrement={() => {dispatch(incrementCount(count));}}
-      onDecrement={() => {dispatch(decrementCount(count));}}
+      onIncrement={() => {incrementCount(2);}}
+      onDecrement={() => {decrementCount();}}
     />
   }
 }
 
 function mapStateToProps(state) {
   return {
-    count :state
+    count: state
   };
 }
 
